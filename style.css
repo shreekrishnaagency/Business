@@ -102,3 +102,7 @@ button:hover {
   margin-top: 8px;
   font-weight: 600;
 }
+
+.payment {
+  display: none;
+}

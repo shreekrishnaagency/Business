@@ -2,41 +2,64 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Instagram Paid Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Krishna Influencer Marketing Agency</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <img src="logo.png" alt="Shree Krishna IMA Logo">
+      <span>Shree Krishna IMA</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#links">Connect</a></li>
+    </ul>
+  </nav>
 
-<div class="box">
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Welcome to <span>Shree Krishna Influencer Marketing Agency</span></h1>
+      <p>Helping influencers grow with trust, strategy, and creativity.</p>
+      <a href="#links" class="cta-btn">Connect With Us</a>
+    </div>
+  </section>
 
-  <!-- LOGO -->
-  <img src="Logo.png" alt="Shree Krishna IMA Logo" class="logo">
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Shree Krishna IMA is a modern influencer marketing agency providing Instagram growth, content collaboration, and influencer management services.</p>
+  </section>
 
-  <h1>Instagram Paid Services</h1>
-  <p>Select service & get instant price</p>
+  <!-- Links / Connect Section -->
+  <section id="links" class="links">
+    <h2>Connect With Us</h2>
+    <div class="link-cards">
+      <a href="https://www.instagram.com/shree.krishna.ima?igsh=MW1vdm40cTRtbmVoZw==" target="_blank" class="card instagram">
+        <span>Instagram</span>
+      </a>
+      <a href="https://forms.gle/eQgnMQff64L98y1Q9" target="_blank" class="card form">
+        <span>Join as Creator</span>
+      </a>
+      <a href="mailto:Influencers.shreekrishnaima@zohomail.in" class="card mail">
+        <span>Email Us</span>
+      </a>
+      <a href="https://t.me/shreekrishnaIMA" target="_blank" class="card telegram">
+        <span>Telegram</span>
+      </a>
+    </div>
+  </section>
 
-  <label>Choose Service</label>
-  <select id="service">
-    <option value="">Select</option>
-    <option value="views">Reels Views (1000)</option>
-    <option value="followers">Followers (1000)</option>
-    <option value="likes">Reels Likes (1000)</option>
-    <option value="comments">Comments (1000)</option>
-    <option value="story">Story Views (1000)</option>
-  </select>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Shree Krishna Influencer Marketing Agency. All rights reserved.</p>
+  </footer>
 
-  <label>Instagram Username / Reel Link</label>
-  <input type="text" id="username" placeholder="@username or reel link">
-
-  <div class="price">
-    Total Price: ₹<span id="price">0</span>
-  </div>
-
-  <button onclick="verify()">Verify & Continue</button>
-</div>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

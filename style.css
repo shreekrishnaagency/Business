@@ -1,87 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shree Krishna Influencer Marketing Agency</title>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+html {
+  scroll-behavior: smooth;
+}
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+body {
+  background: linear-gradient(270deg, #0f0c29, #302b63, #24243e);
+  background-size: 600% 600%;
+  animation: bgMove 12s ease infinite;
+  color: #fff;
+}
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+@keyframes bgMove {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
-    <!-- NAVBAR -->
-    <nav class="navbar">
-        <div class="logo">श्री Krishna IMA</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#links">Connect</a></li>
-        </ul>
-    </nav>
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  z-index: 999;
+}
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-        <h1>Shree Krishna<br>Influencer Marketing Agency</h1>
-        <p>Connecting Brands with Powerful Creators 🚀</p>
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
 
-        <div class="buttons">
-            <a href="https://forms.gle/eQgnMQff64L98y1Q9" target="_blank" class="btn primary">
-                Join as Creator
-            </a>
-            <a href="mailto:Influencers.shreekrishnaima@zohomail.in" class="btn secondary">
-                Contact Us
-            </a>
-        </div>
-    </section>
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-        <h2>About Us</h2>
-        <p>
-            Shree Krishna Influencer Marketing Agency helps brands grow
-            using authentic creators and connects influencers with real
-            paid collaboration opportunities.
-        </p>
-    </section>
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
 
-    <!-- LINKS -->
-    <section class="links" id="links">
-        <h2>Connect With Us</h2>
+.navbar a:hover {
+  color: #ffd700;
+}
 
-        <div class="cards">
-            <a class="card instagram" href="https://www.instagram.com/shree.krishna.agency" target="_blank">
-                <i class="fab fa-instagram"></i>
-                <span>Instagram</span>
-            </a>
+/* HERO */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
 
-            <a class="card telegram" href="https://t.me/shreekrishnaIMA" target="_blank">
-                <i class="fab fa-telegram"></i>
-                <span>Telegram</span>
-            </a>
+.hero h1 {
+  font-size: 3rem;
+  animation: fadeUp 1.5s ease;
+}
 
-            <a class="card email" href="mailto:Influencers.shreekrishnaima@zohomail.in">
-                <i class="fas fa-envelope"></i>
-                <span>Email</span>
-            </a>
+.hero h1 span {
+  color: #ffd700;
+}
 
-            <a class="card form" href="https://forms.gle/eQgnMQff64L98y1Q9" target="_blank">
-                <i class="fas fa-pen-to-square"></i>
-                <span>Creator Form</span>
-            </a>
-        </div>
-    </section>
+.glow {
+  text-shadow: 0 0 15px rgba(255,215,0,0.7);
+}
 
-    <!-- FOOTER -->
-    <footer>
-        © 2025 Shree Krishna Influencer Marketing Agency
-    </footer>
+@keyframes fadeUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
 
-</body>
-</html>
+.typing {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  opacity: 0;
+  animation: fadeUp 2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+.primary {
+  background: #ffd700;
+  color: #000;
+  box-shadow: 0 0 20px #ffd700;
+}
+
+.primary:hover {
+  transform: scale(1.1);
+}
+
+.secondary {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.secondary:hover {
+  background: #fff;
+  color: #000;
+}
+
+/* ABOUT */
+.about {
+  padding: 80px 15%;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+/* LINKS */
+.links {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card {
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  text-decoration: none;
+  color: #fff;
+  transition: 0.4s;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {transform: translateY(0);}
+  50% {transform: translateY(-10px);}
+  100% {transform: translateY(0);}
+}
+
+.card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,0.25);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: rgba(0,0,0,0.6);
+}

@@ -1,25 +1,42 @@
-alert("JS Loaded Successfully");
+// PRICE LIST
 const prices = {
-  views: 80,
-  followers: 200,
-  likes: 100,
-  comments: 150,
-  story: 50
+  views: 49,
+  followers: 199,
+  likes: 99,
+  comments: 149,
+  story: 39
 };
 
-function updatePrice() {
-  const service = document.getElementById("service").value;
-  document.getElementById("price").innerText = service ? prices[service] : 0;
-}
+const serviceSelect = document.getElementById("service");
+const priceSpan = document.getElementById("price");
+const paymentDiv = document.getElementById("payment");
+const usernameInput = document.getElementById("username");
 
-function verifyOrder() {
-  const service = document.getElementById("service").value;
-  const input = document.getElementById("inputField").value;
+// Update price when service changes
+serviceSelect.addEventListener("change", function () {
+  const selectedService = this.value;
 
-  if (!service || input.trim() === "") {
-    alert("Please select service and enter username or link");
+  if (prices[selectedService]) {
+    priceSpan.innerText = prices[selectedService];
+  } else {
+    priceSpan.innerText = 0;
+  }
+});
+
+// Verify button function
+function verify() {
+  const service = serviceSelect.value;
+  const username = usernameInput.value.trim();
+
+  if (service === "") {
+    alert("Please select a service");
     return;
   }
 
-  document.getElementById("paymentSection").style.display = "block";
+  if (username === "") {
+    alert("Please enter Instagram username or reel link");
+    return;
+  }
+
+  paymentDiv.style.display = "block";
 }

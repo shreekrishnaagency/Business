@@ -95,13 +95,36 @@ section h2 { text-align:center; font-size:2rem; margin-bottom:2rem; color:#ffd70
 footer { text-align:center; padding:2rem; background:rgba(0,0,0,0.8); margin-top:2rem; }
 footer a { color:#ffd700; margin:0 0.5rem; }
 
+/* Sticky CTA Button */
+#sticky-cta {
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#ffd700;
+    color:#000;
+    padding:1rem 1.5rem;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    z-index:200;
+    box-shadow:0 5px 15px rgba(255,215,0,0.6);
+    transition:0.3s;
+}
+#sticky-cta:hover { background:#ffea00; transform:translateY(-5px); }
+
 /* Animations */
 @keyframes fadeIn { 0% {opacity:0; transform:translateY(20px);} 100% {opacity:1; transform:translateY(0);} }
 
 /* Responsive */
-@media(max-width:768px){ nav ul { display:none; flex-direction:column; background:rgba(0,0,0,0.9); position:absolute; top:70px; right:0; width:200px; padding:1rem; border-radius:0 0 0 10px; } nav ul.active { display:flex; } .hamburger { display:flex; } }
-@media(max-width:480px){ .hero-buttons { flex-direction:column; gap:0.5rem; } .collab-box { padding:2rem 1.5rem; } }
-
+@media(max-width:768px){ 
+    nav ul { display:none; flex-direction:column; background:rgba(0,0,0,0.9); position:absolute; top:70px; right:0; width:200px; padding:1rem; border-radius:0 0 0 10px; } 
+    nav ul.active { display:flex; } 
+    .hamburger { display:flex; } 
+}
+@media(max-width:480px){ 
+    .hero-buttons { flex-direction:column; gap:0.5rem; } 
+    .collab-box { padding:2rem 1.5rem; } 
+}
 </style>
 </head>
 <body>
@@ -236,8 +259,11 @@ footer a { color:#ffd700; margin:0 0.5rem; }
     </div>
 </footer>
 
+<!-- Sticky CTA -->
+<a href="#collab" id="sticky-cta">Collaborate With Us</a>
+
 <script>
-// Hamburger
+// Hamburger Menu
 const menu = document.querySelector('nav ul');
 function toggleMenu() { menu.classList.toggle('active'); }
 

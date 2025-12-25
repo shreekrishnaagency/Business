@@ -51,20 +51,22 @@
         padding:0 1rem; 
     }
     .hero h1 { 
-        font-size:2rem; 
+        font-size: clamp(1.5rem, 5vw, 2rem); /* responsive font size */
         font-weight:700; 
         color:#ffd700; 
         animation:fadeIn 2s ease forwards; 
-        white-space: nowrap;          /* ensures one line on mobile */
-        overflow: hidden;
-        text-overflow: ellipsis;
         text-align:center;
+        overflow-wrap: break-word; 
+        word-break: break-word;
+        max-width: 90vw; 
+        margin:0 auto;
     }
     .hero-buttons { 
         margin-top:2rem;               /* gap between heading and buttons */
         display:flex; 
         flex-wrap:wrap; 
         gap:1rem; 
+        justify-content:center;
     }
     .hero .btn { 
         padding:0.8rem 2rem; 
@@ -73,7 +75,7 @@
         cursor:pointer; 
         font-weight:600; 
         transition:0.3s; 
-        white-space: nowrap;          /* prevent wrapping */
+        white-space: nowrap;          
     }
     .btn-primary { background:#ffd700; color:#000; }
     .btn-primary:hover { background:#ffea00; }
@@ -153,7 +155,6 @@
         .hamburger { display:flex; }
     }
     @media(max-width:480px){
-        .hero h1 { font-size:1.5rem; }
         .hero-buttons { flex-direction:column; gap:0.5rem; }
     }
 </style>

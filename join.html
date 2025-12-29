@@ -76,6 +76,13 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.5);
         }
+        .loading-text {
+            display: none;
+            color: #FFD700;
+            font-size: 14px;
+            margin-top: 15px;
+            font-weight: 500;
+        }
         .back-link {
             display: block;
             margin-top: 25px;
@@ -95,7 +102,7 @@
     <h2>🚀 Join Our Team</h2>
     <p>Fill this form to get paid sponsorships & brand deals.</p>
     
-    <form action="https://script.google.com/macros/s/AKfycbwE32dfThGEmJXzd3rguCEruKkQ5Rkw4H6xA44WWJibnP3IY_c0Z4JQZwjThj4hcgDPHg/exec" method="POST">
+    <form name="submit-to-google-sheet">
 
         <input type="text" name="Name" placeholder="Full Name" required>
         
@@ -107,11 +114,43 @@
         
         <input type="number" name="Promo_Price" placeholder="1 Promo Price (₹)" required>
 
-        <button type="submit">Submit & Join</button>
+        <button type="submit" id="btnSubmit">Submit & Join</button>
     </form>
+    
+    <p id="msg" class="loading-text">⏳ Processing details...</p>
 
     <a href="index.html" class="back-link">← Back to Home Page</a>
 </div>
+
+<script>
+    // ✅ AAPKA GOOGLE SCRIPT URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwE32dfThGEmJXzd3rguCEruKkQ5Rkw4H6xA44WWJibnP3IY_c0Z4JQZwjThj4hcgDPHg/exec';
+    
+    const form = document.forms['submit-to-google-sheet'];
+    const btn = document.getElementById('btnSubmit');
+    const msg = document.getElementById('msg');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault(); // Page reload rokta hai
+      
+      // Button Animation
+      btn.innerHTML = "Submitting...";
+      btn.style.opacity = "0.7";
+      msg.style.display = "block"; // Show loading text
+
+      // Background Submission (AJAX)
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            // Success hone par turant Home Page par Redirect
+            window.location.href = "index.html";
+        })
+        .catch(error => {
+            // Agar koi error aaye tab bhi redirect kar do (Safe side)
+            console.error('Error!', error.message);
+            window.location.href = "index.html";
+        });
+    });
+</script>
 
 </body>
 </html>

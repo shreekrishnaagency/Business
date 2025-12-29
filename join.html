@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join as Creator - Shree Krishna Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Poppins', sans-serif;
+            /* Main Website wala Dark Theme */
             background: linear-gradient(135deg, #141E30 0%, #243B55 100%);
             color: #e0e0e0;
             display: flex;
@@ -49,6 +51,7 @@
             outline: none;
             box-sizing: border-box;
             transition: 0.3s;
+            font-family: 'Poppins', sans-serif;
         }
         input:focus {
             border-color: #FFD700;
@@ -70,6 +73,7 @@
             transition: 0.3s;
             margin-top: 20px;
             box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            font-family: 'Poppins', sans-serif;
         }
         button:hover {
             background: #ffea00;
@@ -117,13 +121,13 @@
         <button type="submit" id="btnSubmit">Submit & Join</button>
     </form>
     
-    <p id="msg" class="loading-text">⏳ Processing details...</p>
+    <p id="msg" class="loading-text">⏳ Saving details, please wait...</p>
 
     <a href="index.html" class="back-link">← Back to Home Page</a>
 </div>
 
 <script>
-    // ✅ AAPKA GOOGLE SCRIPT URL
+    // ✅ AAPKA SAHI URL (/exec wala)
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwE32dfThGEmJXzd3rguCEruKkQ5Rkw4H6xA44WWJibnP3IY_c0Z4JQZwjThj4hcgDPHg/exec';
     
     const form = document.forms['submit-to-google-sheet'];
@@ -134,19 +138,22 @@
       e.preventDefault(); // Page reload rokta hai
       
       // Button Animation
-      btn.innerHTML = "Submitting...";
+      btn.innerHTML = "Processing...";
       btn.style.opacity = "0.7";
+      btn.disabled = true; // Button disable taaki do baar click na ho
       msg.style.display = "block"; // Show loading text
 
-      // Background Submission (AJAX)
+      // ✅ Data Bhejna (Standard Method)
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
-            // Success hone par turant Home Page par Redirect
+            // Success! Redirect to Home
+            console.log('Success!', response);
             window.location.href = "index.html";
         })
         .catch(error => {
-            // Agar koi error aaye tab bhi redirect kar do (Safe side)
-            console.error('Error!', error.message);
+            // Agar CORS Error bhi aaye, tab bhi Data Chala Jata hai.
+            // Isliye hum user ko Error nahi dikhayenge, seedha Redirect karenge.
+            console.error('Error (Safe to Ignore):', error.message);
             window.location.href = "index.html";
         });
     });

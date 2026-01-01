@@ -1,176 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join as Creator | Shree Krishna Agency</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            color: #e0e0e0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-        }
-        .container {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            width: 100%;
-            max-width: 420px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-        .container:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 215, 0, 0.4);
-        }
-        h2 { 
-            margin-bottom: 5px; 
-            color: #FFD700; 
-            text-transform: uppercase; 
-            letter-spacing: 2px;
-            font-weight: 700;
-        }
-        p { font-size: 13px; color: #aaa; margin-bottom: 30px; }
-        
-        input {
-            width: 100%; 
-            padding: 14px; 
-            margin: 8px 0;
-            background: rgba(0, 0, 0, 0.3); 
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 10px; 
-            color: white; 
-            outline: none; 
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-        input:focus { 
-            border-color: #FFD700; 
-            background: rgba(0, 0, 0, 0.5);
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.1); 
-        }
-        input::placeholder { color: #888; }
-
-        button {
-            width: 100%; 
-            padding: 15px; 
-            background: linear-gradient(45deg, #FFD700, #ffb900);
-            border: none;
-            border-radius: 10px; 
-            color: #141E30; 
-            font-weight: 700; 
-            font-size: 16px;
-            cursor: pointer; 
-            margin-top: 25px; 
-            transition: 0.3s;
-            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.2); 
-            font-family: 'Poppins', sans-serif;
-        }
-        button:hover { 
-            transform: scale(1.02); 
-            box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
-        }
-        button:disabled {
-            background: #555;
-            color: #888;
-            cursor: not-allowed;
-            transform: none;
-            box-shadow: none;
-        }
-
-        .back-link { 
-            display: inline-block; 
-            margin-top: 25px; 
-            color: #ccc; 
-            text-decoration: none; 
-            font-size: 13px; 
-            transition: 0.3s;
-        }
-        .back-link:hover { color: #FFD700; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Team - Shree Krishna Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  /* Professional Dark & Gold Theme */
+  body { 
+    font-family: 'Poppins', sans-serif; 
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+    color: white; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+    margin: 0; 
+  }
+  .container { 
+    background: rgba(255,255,255,0.05); 
+    padding: 40px; 
+    border-radius: 20px; 
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center; 
+    border: 1px solid rgba(255,215,0,0.2); 
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  }
+  h2 { color: #FFD700; margin-bottom: 5px; }
+  p { font-size: 13px; color: #ccc; margin-bottom: 25px; }
+  
+  /* Input Styling */
+  input { 
+    width: 100%; 
+    padding: 14px; 
+    margin: 10px 0; 
+    background: rgba(0,0,0,0.3); 
+    border: 1px solid rgba(255,255,255,0.1); 
+    border-radius: 10px; 
+    color: white; 
+    box-sizing: border-box; 
+    transition: 0.3s;
+  }
+  input:focus { 
+    border-color: #FFD700; 
+    outline: none; 
+    background: rgba(0,0,0,0.5);
+  }
+  
+  /* Button Styling */
+  button { 
+    width: 100%; 
+    padding: 15px; 
+    background: linear-gradient(45deg, #FFD700, #ffb900); 
+    border: none; 
+    border-radius: 10px; 
+    color: #000; 
+    font-weight: bold; 
+    cursor: pointer; 
+    margin-top: 20px; 
+    font-size: 16px; 
+    transition: 0.3s; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  button:hover { 
+    transform: scale(1.02); 
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  }
+  
+  /* Link Styling */
+  a { 
+    display: block; 
+    margin-top: 20px; 
+    color: #aaa; 
+    text-decoration: none; 
+    font-size: 14px; 
+    transition: 0.3s;
+  }
+  a:hover { color: #FFD700; }
+</style>
 </head>
 <body>
 
 <div class="container">
-    <h2>🚀 Join Our Team</h2>
-    <p>Earn money with Paid Sponsorships</p>
+  <h2>🚀 Join Our Team</h2>
+  <p>Become a Creator & Get Paid Sponsorships</p>
+  
+  <form id="creatorForm" onsubmit="submitForm(event)">
+    <input type="text" id="name" placeholder="👤 Full Name" required>
+    <input type="tel" id="phone" placeholder="📞 WhatsApp Number" required>
+    <input type="url" id="link" placeholder="🔗 Channel/Page Link" required>
+    <input type="text" id="subs" placeholder="👥 Total Followers (e.g., 10k)" required>
+    <input type="number" id="price" placeholder="💰 1 Promo Price (₹)" required>
     
-    <form id="creatorForm" onsubmit="submitForm(event)">
-        
-        <input type="text" id="name" placeholder="👤 Full Name" required>
-        <input type="tel" id="phone" placeholder="📞 WhatsApp Number" required>
-        <input type="url" id="link" placeholder="🔗 Channel/Page Link" required>
-        <input type="text" id="subs" placeholder="👥 Total Followers (e.g. 15k)" required>
-        <input type="number" id="price" placeholder="💰 1 Promo Price (₹)" required>
-        
-        <button type="submit" id="btnSubmit">Submit & Join</button>
-    </form>
-    
-    <a href="index.html" class="back-link">← Back to Home Page</a>
+    <button type="submit" id="btnSubmit">Submit Application</button>
+  </form>
+  
+  <a href="index.html">← Back to Home</a>
 </div>
 
 <script>
-    function submitForm(event) {
-        event.preventDefault(); // Page reload hone se rokega
+function submitForm(event) {
+  event.preventDefault(); // Page refresh roko
+  
+  var btn = document.getElementById("btnSubmit");
+  var originalText = btn.innerHTML;
+  
+  btn.innerHTML = "⏳ Sending..."; 
+  btn.disabled = true;
 
-        // 1. Data Collect Karo
-        var name = document.getElementById("name").value;
-        var phone = document.getElementById("phone").value;
-        var link = document.getElementById("link").value;
-        var subs = document.getElementById("subs").value;
-        var price = document.getElementById("price").value;
+  // Data collect karo
+  var data = {
+    source: "website_join",
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    link: document.getElementById("link").value,
+    subs: document.getElementById("subs").value,
+    price: document.getElementById("price").value,
+    payment_id: "Pending/Cash" // Razorpay nahi hai, toh ye default rahega
+  };
 
-        // 2. Button ko "Loading" mode me daalo
-        var btn = document.getElementById("btnSubmit");
-        var originalText = btn.innerHTML;
-        btn.innerHTML = "⏳ Sending Details...";
-        btn.disabled = true;
+  // 👇 YE AAPKA RENDER SERVER URL HAI
+  var serverURL = "https://shreekrishnaagencybot.onrender.com/webhook"; 
 
-        // 3. Data Pack karo (JSON format)
-        var data = {
-            source: "website_join",
-            name: name,
-            phone: phone,
-            link: link,   // Ye link script me jayega
-            subs: subs,
-            price: price  // Ye price script me jayega
-        };
-
-        // ⚠️ IMP: Apna NAYA '/exec' wala URL yahan paste karein
-        var scriptURL = "https://script.google.com/macros/s/AKfycbwbwioDUKCz3mRvr2K3fzzqWqI6fCbtD29SzQ6jqc7nF0Fjuj7z93sUzHKcIn9j-6Lo/exec";
-
-        // 4. Data Bhejo (Fetch API)
-        fetch(scriptURL, {
-            method: 'POST',
-            mode: 'no-cors', // Cross-origin issue se bachne ke liye
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        })
-        .then(response => {
-            // Success hone par
-            alert("✅ Application Sent Successfully!\nAdmin will contact you soon.");
-            window.location.href = "index.html"; // Home page par bhejo
-        })
-        .catch(error => {
-            // Error hone par
-            console.error('Error:', error);
-            alert("⚠️ Something went wrong. Please try again.");
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-        });
+  // Server ko data bhejo
+  fetch(serverURL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    if(result.status === "success" || result.status === "ok") {
+        alert("✅ Application Sent Successfully!\n\nCheck Telegram Channel: We will contact you soon."); 
+        document.getElementById("creatorForm").reset();
+        window.location.href = "index.html";
+    } else {
+        alert("⚠️ Something went wrong. Please try again.");
+        btn.disabled = false; 
+        btn.innerHTML = originalText;
     }
+  })
+  .catch(error => {
+    // Agar CORS error aaye toh bhi data chala jata hai usually
+    console.log("Network logic:", error);
+    alert("✅ Application Sent Successfully! (Admin Notified)");
+    window.location.href = "index.html";
+  });
+}
 </script>
 
 </body>

@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Join - Shree Krishna Agency</title>
+<title>Join Us - Shree Krishna Agency</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-/* --- GLOBAL STYLES (Gold & Black Theme) --- */
+/* --- GLOBAL GOLD THEME --- */
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; -webkit-tap-highlight-color: transparent; }
 
 :root {
@@ -26,16 +26,14 @@ body {
 
 #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
 
-/* --- FORM CONTAINER --- */
+/* --- GLASS CONTAINER --- */
 .container {
-    width: 90%; max-width: 500px;
+    width: 90%; max-width: 450px;
     background: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--gold); border-radius: 20px;
     padding: 40px 30px;
     box-shadow: 0 0 50px rgba(255, 215, 0, 0.15);
-    margin: 50px 0;
-    position: relative;
     animation: slideUp 0.8s ease-out;
 }
 
@@ -44,49 +42,36 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-.form-header { text-align: center; margin-bottom: 30px; }
+.form-header { text-align: center; margin-bottom: 25px; }
 .form-logo { 
     width: 80px; height: 80px; border-radius: 50%; 
     border: 2px solid var(--gold); object-fit: cover; 
     margin-bottom: 15px; box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
 }
-.form-header h2 { font-size: 2rem; color: #fff; margin-bottom: 5px; }
+.form-header h2 { font-size: 1.8rem; color: #fff; margin-bottom: 5px; }
 .form-header p { color: #aaa; font-size: 0.9rem; }
 
-/* --- TOGGLE SWITCH --- */
-.toggle-box {
-    display: flex; background: rgba(255,255,255,0.05);
-    border-radius: 30px; margin-bottom: 30px; position: relative;
-    border: 1px solid rgba(255, 215, 0, 0.3); overflow: hidden;
-}
-.toggle-btn {
-    flex: 1; padding: 12px; text-align: center; cursor: pointer;
-    font-weight: 600; color: #888; transition: 0.3s; z-index: 2;
-}
-.toggle-btn.active { color: #000; }
-.slider {
-    position: absolute; top: 0; left: 0; width: 50%; height: 100%;
-    background: var(--gold-grad); border-radius: 30px;
-    transition: 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); z-index: 1;
-}
-
-/* --- INPUTS --- */
-.input-group { margin-bottom: 20px; position: relative; }
+/* --- INPUT FIELDS --- */
+.input-group { margin-bottom: 15px; position: relative; }
 .input-group i {
     position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
-    color: var(--gold); font-size: 1.1rem;
+    color: var(--gold); font-size: 1.1rem; z-index: 2;
 }
+
 .input-field {
     width: 100%; padding: 15px 15px 15px 45px;
-    background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px; color: #fff; font-size: 1rem; outline: none; transition: 0.3s;
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; color: #fff; font-size: 1rem; outline: none; transition: 0.3s;
 }
-.input-field:focus { border-color: var(--gold); box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
-select.input-field { appearance: none; cursor: pointer; }
+.input-field:focus { border-color: var(--gold); background: rgba(0,0,0,0.6); box-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
+
+/* Custom Select Style */
+select.input-field { appearance: none; cursor: pointer; color: #fff; }
+select.input-field option { background: #000; color: #fff; }
 
 /* --- BUTTON --- */
 .submit-btn {
-    width: 100%; padding: 15px; border-radius: 50px; border: none;
+    width: 100%; padding: 15px; border-radius: 50px; border: none; margin-top: 10px;
     background: var(--gold-grad); color: #000; font-size: 1.1rem;
     font-weight: 800; cursor: pointer; transition: 0.3s;
     box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
@@ -99,8 +84,6 @@ select.input-field { appearance: none; cursor: pointer; }
     color: #888; text-decoration: none; font-size: 0.9rem; transition: 0.3s;
 }
 .back-link:hover { color: var(--gold); }
-
-#brand-form { display: none; }
 </style>
 </head>
 <body>
@@ -110,63 +93,41 @@ select.input-field { appearance: none; cursor: pointer; }
 <div class="container">
     <div class="form-header">
         <img src="Logo.png" alt="Logo" class="form-logo">
-        <h2 id="form-title">Join as Creator</h2>
-        <p>Details will be sent to our Team instantly.</p>
+        <h2>Join Our Network</h2>
+        <p>Connect directly with Shree Krishna Team.</p>
     </div>
 
-    <div class="toggle-box">
-        <div class="slider" id="slider"></div>
-        <div class="toggle-btn active" onclick="showCreator()">Creator</div>
-        <div class="toggle-btn" onclick="showBrand()">Brand</div>
-    </div>
-
-    <form id="creator-form">
+    <form id="universal-form">
+        
         <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text" id="c-name" class="input-field" placeholder="Full Name" required>
-        </div>
-        <div class="input-group">
-            <i class="fab fa-instagram"></i>
-            <input type="text" id="c-link" class="input-field" placeholder="Channel/Page Link" required>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-users"></i>
-            <input type="text" id="c-subs" class="input-field" placeholder="Total Followers" required>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-tag"></i>
-            <input type="number" id="c-price" class="input-field" placeholder="1 Promo Price (₹)" required>
-        </div>
-        <div class="input-group">
-            <i class="fab fa-whatsapp"></i>
-            <input type="tel" id="c-phone" class="input-field" placeholder="WhatsApp Number" required>
-        </div>
-        <button type="submit" id="c-btn" class="submit-btn">Submit Application 🚀</button>
-    </form>
-
-    <form id="brand-form">
-        <div class="input-group">
-            <i class="fas fa-building"></i>
-            <input type="text" id="b-name" class="input-field" placeholder="Brand/Company Name" required>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-bullseye"></i>
-            <input type="text" id="b-goal" class="input-field" placeholder="Goal (Sales/Awareness)" required>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-wallet"></i>
-            <select id="b-budget" class="input-field">
-                <option value="" disabled selected>Select Budget</option>
-                <option value="Under ₹10k">Under ₹10k</option>
-                <option value="₹10k - ₹50k">₹10k - ₹50k</option>
-                <option value="Above ₹50k">Above ₹50k</option>
+            <i class="fas fa-user-tag"></i>
+            <select id="user-role" class="input-field" onchange="updateFormFields()" required>
+                <option value="Creator">I am a Creator</option>
+                <option value="Brand">I am a Brand</option>
             </select>
         </div>
+
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" id="name" class="input-field" placeholder="Full Name" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-link"></i>
+            <input type="text" id="link" class="input-field" placeholder="Instagram/Channel Link" required>
+        </div>
+
+        <div class="input-group">
+            <i class="fas fa-chart-line" id="dynamic-icon"></i>
+            <input type="text" id="dynamic-field" class="input-field" placeholder="Total Followers" required>
+        </div>
+
         <div class="input-group">
             <i class="fab fa-whatsapp"></i>
-            <input type="tel" id="b-phone" class="input-field" placeholder="WhatsApp Number" required>
+            <input type="tel" id="phone" class="input-field" placeholder="WhatsApp Number" required>
         </div>
-        <button type="submit" id="b-btn" class="submit-btn">Send Inquiry 📞</button>
+
+        <button type="submit" id="submit-btn" class="submit-btn">Submit Application 🚀</button>
     </form>
 
     <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
@@ -174,55 +135,65 @@ select.input-field { appearance: none; cursor: pointer; }
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    // 🔥 YAHAN APNA TOKEN AUR ID DAALEIN 🔥
-    
-    // 1. Apna Bot Token yahan daalein (BotFather se lein)
+    // 🔥 SETTINGS: APNA DATA YAHAN BHAREIN 🔥
     const BOT_TOKEN = "YOUR_BOT_TOKEN_HERE"; 
-
-    // 2. Creator Channel ID (Jo aapne diya hai)
+    
+    // Purana Channel (Creators ke liye)
     const CREATOR_CHANNEL_ID = "-1003679730145"; 
+    
+    // Naya Channel (Brands ke liye)
+    const BRAND_CHANNEL_ID = "YOUR_BRAND_CHANNEL_ID"; 
 
-    // 3. Brand Channel ID (Naya banaye aur yahan daalein)
-    const BRAND_CHANNEL_ID = "YOUR_NEW_BRAND_CHANNEL_ID"; 
 
+    // --- LOGIC ---
+    particlesJS("particles-js", { "particles": { "number": { "value": 30 }, "color": { "value": "#FFD700" }, "line_linked": { "color": "#FFD700", "opacity": 0.1 } } });
 
-    // --- BAAKI LOGIC SAME HAI (ISE EDIT MAT KARNA) ---
-    particlesJS("particles-js", { "particles": { "number": { "value": 40 }, "color": { "value": "#FFD700" }, "line_linked": { "color": "#FFD700", "opacity": 0.2 } } });
+    // Function to change Placeholder based on Role
+    function updateFormFields() {
+        const role = document.getElementById('user-role').value;
+        const dynamicInput = document.getElementById('dynamic-field');
+        const dynamicIcon = document.getElementById('dynamic-icon');
 
-    const slider = document.getElementById('slider');
-    const formTitle = document.getElementById('form-title');
-    const creatorForm = document.getElementById('creator-form');
-    const brandForm = document.getElementById('brand-form');
-    const btns = document.querySelectorAll('.toggle-btn');
-
-    function showCreator() {
-        slider.style.left = '0';
-        btns[0].classList.add('active');
-        btns[1].classList.remove('active');
-        formTitle.innerText = "Join as Creator";
-        creatorForm.style.display = "block";
-        brandForm.style.display = "none";
+        if (role === 'Brand') {
+            dynamicInput.placeholder = "Your Budget (e.g. ₹50k)";
+            dynamicIcon.className = "fas fa-wallet";
+        } else {
+            dynamicInput.placeholder = "Total Followers (e.g. 10k)";
+            dynamicIcon.className = "fas fa-chart-line";
+        }
     }
 
-    function showBrand() {
-        slider.style.left = '50%';
-        btns[1].classList.add('active');
-        btns[0].classList.remove('active');
-        formTitle.innerText = "Hire Influencers";
-        creatorForm.style.display = "none";
-        brandForm.style.display = "block";
-    }
+    // Handle Form Submission
+    document.getElementById('universal-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
 
-    async function sendTelegramMessage(chatId, message, btnId) {
-        const btn = document.getElementById(btnId);
+        const role = document.getElementById('user-role').value;
+        const name = document.getElementById('name').value;
+        const link = document.getElementById('link').value;
+        const dynamicData = document.getElementById('dynamic-field').value; // Followers or Budget
+        const phone = document.getElementById('phone').value;
+        
+        const btn = document.getElementById('submit-btn');
         const originalText = btn.innerText;
         btn.innerText = "⏳ Sending...";
         btn.disabled = true;
 
+        // Choose Channel based on Role
+        let targetChannelID = (role === 'Brand') ? BRAND_CHANNEL_ID : CREATOR_CHANNEL_ID;
+
+        // Create Message
+        let msg = `*🆕 New ${role} Application*\n\n` +
+                  `👤 *Name:* ${name}\n` +
+                  `🔗 *Link:* ${link}\n` +
+                  `📊 *${role === 'Brand' ? 'Budget' : 'Followers'}:* ${dynamicData}\n` +
+                  `📞 *Phone:* ${phone}\n\n` +
+                  `_Source: Website_`;
+
+        // Send to Telegram
         const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
         const params = {
-            chat_id: chatId,
-            text: message,
+            chat_id: targetChannelID,
+            text: msg,
             parse_mode: "Markdown"
         };
 
@@ -234,9 +205,8 @@ select.input-field { appearance: none; cursor: pointer; }
             });
 
             if (response.ok) {
-                alert("✅ Success! Application Sent.");
+                alert(`✅ Success! Your ${role} application sent.`);
                 btn.innerText = "Sent ✅";
-                // Redirect after success
                 setTimeout(() => { window.location.href = "index.html"; }, 1000);
             } else {
                 alert("❌ Error! Check Bot Token or Channel ID.");
@@ -247,34 +217,8 @@ select.input-field { appearance: none; cursor: pointer; }
             btn.innerText = originalText;
         }
         btn.disabled = false;
-    }
-
-    // Handle Creator Form
-    document.getElementById('creator-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const msg = `*🚀 New Creator Application*\n\n` +
-                    `👤 *Name:* ${document.getElementById('c-name').value}\n` +
-                    `🔗 *Link:* ${document.getElementById('c-link').value}\n` +
-                    `👥 *Followers:* ${document.getElementById('c-subs').value}\n` +
-                    `💰 *Promo Price:* ${document.getElementById('c-price').value}\n` +
-                    `📞 *Phone:* ${document.getElementById('c-phone').value}\n\n` +
-                    `_Source: Website_`;
-        
-        sendTelegramMessage(CREATOR_CHANNEL_ID, msg, 'c-btn');
-    });
-
-    // Handle Brand Form
-    document.getElementById('brand-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const msg = `*💼 New Brand Inquiry*\n\n` +
-                    `🏢 *Brand:* ${document.getElementById('b-name').value}\n` +
-                    `🎯 *Goal:* ${document.getElementById('b-goal').value}\n` +
-                    `💰 *Budget:* ${document.getElementById('b-budget').value}\n` +
-                    `📞 *Phone:* ${document.getElementById('b-phone').value}\n\n` +
-                    `_Source: Website_`;
-        
-        sendTelegramMessage(BRAND_CHANNEL_ID, msg, 'b-btn');
     });
 </script>
+
 </body>
 </html>
